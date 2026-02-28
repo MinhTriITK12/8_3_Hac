@@ -6,8 +6,8 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #0b0f19 0%, #1a2a6c 100%);
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #a75ff2 0%, #d76fff 50%, #f689f9 100%);
     color: white;
 }
 
@@ -65,20 +65,95 @@ html {
     text-align: center;
 }
 
+.intro-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.avatar-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.avatar-img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.greeting-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #fff;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 2px 0;
+    text-transform: uppercase;
+}
+
+.subtitle-cursive {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ffb6c1;
+    /* Soft pink variant */
+    margin: -5px 0 5px 0;
+    z-index: 1;
+}
+
 #start-btn {
-    padding: 15px 30px;
+    margin-top: 15px;
+    padding: 12px 35px;
     font-size: 1.2rem;
-    border: none;
-    border-radius: 50px;
-    background-color: #ff9a9e;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 40px;
     color: white;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 154, 158, 0.5);
-    transition: transform 0.3s;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.music-icon {
+    font-size: 1.4rem;
+    color: #4CAF50;
+    margin-right: 8px;
 }
 
 #start-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 1);
 }
 
 #flower-container {

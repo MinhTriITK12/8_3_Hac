@@ -1,4 +1,5 @@
 // script.js
+const introContent = document.getElementById('intro-content');
 const startBtn = document.getElementById('start-btn');
 const flowerContainer = document.getElementById('flower-container');
 const letterModal = document.getElementById('letter-modal');
@@ -25,7 +26,7 @@ let imageInterval;
 
 // Xử lý khi bấm nút mở quà
 startBtn.addEventListener('click', () => {
-    startBtn.style.display = 'none';
+    introContent.style.display = 'none';
     flowerContainer.style.display = 'block';
 
     // Đợi 2 giây rồi hiện hộp thư

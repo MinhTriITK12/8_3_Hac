@@ -25,22 +25,128 @@
                 <img src="image/Thiep83-removebg-preview.png" alt="Flowers" class="avatar-img">
             </div>
 
-            <h1 class="greeting-text">Người đẹp đã sẵn sàng mở quà chưa ?</h1>
+            <h1 class="greeting-text">Sẵn sàng mở quà chưa người đẹp?</h1>
 
             <div class="start-btn-wrapper">
                 <button id="start-btn"><span class="music-icon">🎵</span> Oki, mở quà thôi!</button>
             </div>
         </div>
 
-        <div id="flower-container">💐</div>
+
     </div>
 
-    <!-- Hộp thư hiện lên -->
-    <div id="letter-modal">
-        <div class="letter-content">
-            <h2>Gửi tới bạn...</h2>
-            <p>Chúc bạn một ngày 8/3 thật vui vẻ, hạnh phúc và luôn ngập tràn tiếng cười nhé!</p>
-            <button id="continue-btn">Xem tiếp nè 💌</button>
+    <!-- Vẽ tim bằng Svg -->
+    <svg style="display: none;" id="theSvg" viewBox="-120 -30 240 180" enable-background="new 0 0 174 148"
+        xml:space="preserve">
+        <defs>
+            <filter id="f" filterUnits="userSpaceOnUse" x="-120" y="-30" width="120%" height="120%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"></feGaussianBlur>
+                <feOffset in="blur" dx="3" dy="5" result="shadow"></feOffset>
+                <feFlood flood-color="rgba(3,0,0,1)" result="color" />
+                <feComposite in="color" in2="shadow" operator="in" />
+                <feComposite in="SourceGraphic" />
+            </filter>
+            <path id="shape" d="M0, 21.054 
+       C0, 21.054 24.618, -15.165 60.750, 8.554 
+       C93.249, 29.888 57.749, 96.888 0, 117.388
+       C-57.749, 96.888  -93.249, 29.888 -60.750, 8.554
+       C-24.618, -15.165  -0, 21.054 -0, 21.054z    
+    " />
+            <path id="partialPath" />
+        </defs>
+
+        <text dy="-2">
+            <textPath style="font-family: fantasy;" xlink:href="#partialPath" startOffset="12">
+                🌹Happy Women's Day
+                🌹.........................................................................................................................................🌹
+                HAC ART CLUB 8/3!🌹
+            </textPath>
+        </text>
+
+        <use id="useThePath" xlink:href="#partialPath" stroke="white" stroke-width=".5" stroke-opacity=".5" fill="none"
+            style="display:none;" />
+    </svg>
+
+    <!-- Hộp thư phong bao -->
+    <div id="castle"
+        style="display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 20; background: transparent; pointer-events: none; justify-content: center; align-items: center;">
+        <div class="letter" style="pointer-events: auto;">
+            <div class="valentines">
+                <div class="envelope"></div>
+                <div class="front"></div>
+                <div class="card" id="letter-card">
+                    <div class="text">Happy</br> Women's</br> Day!</div>
+                    <div class="heart"></div>
+                </div>
+                <div class="hearts">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                    <div class="four"></div>
+                    <div class="five"></div>
+                </div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+    </div>
+
+    <!-- Lá thư được mở rà -->
+    <div class="wrapperLetterForm"
+        style="display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1000; background: rgba(0, 0, 0, 0.7); justify-content: center; align-items: center;">
+        <div class="boxLetter"
+            style="position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+            <div class="formLetter"
+                style="position: relative; width: 650px; max-width: 90vw; height: 380px; background-color: #FFEBEB; border-radius: 20px; z-index: 100; padding: 20px 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                <div class="heartLetter"
+                    style="position: absolute; width: 30px; height: 30px; border-radius: 50%; background: #FFEBEB; display: flex; justify-content: center; align-items: center; z-index: 10; right: 5px; top: 10px;">
+                    <div class="heartLetterItem"
+                        style="position: relative; width: 10px; height: 10px; transform: rotate(45deg); background: #FF6666;">
+                    </div>
+                </div>
+                <div class="heartLetter"
+                    style="position: absolute; width: 30px; height: 30px; border-radius: 50%; background: #FFEBEB; display: flex; justify-content: center; align-items: center; z-index: 10; left: 5px; bottom: 10px;">
+                    <div class="heartLetterItem"
+                        style="position: relative; width: 10px; height: 10px; transform: rotate(45deg); background: #FF6666;">
+                    </div>
+                </div>
+                <div class="wrapperLetter"
+                    style="position: relative; width: 100%; height: 100%; border: 2px dashed #FF6666; border-radius: inherit; display: flex;">
+
+                    <div class="giftbox" style="position: relative; width: 45%; height: 100%;">
+                        <div class="img"
+                            style="position: absolute; width: 220px; bottom: -10px; left: 20px; z-index: 100;">
+                            <img src="./image/giftbox.png" alt="Giftbox" style="width: 100%;">
+                        </div>
+                    </div>
+
+                    <div class="textLetter"
+                        style="width: 55%; display: flex; flex-direction: column; justify-content: center; align-items: center; user-select: none; position: relative;">
+                        <h2 style="font-size: 35px; font-family: 'Dancing Script', cursive; color: #111;"></h2>
+                        <p class="contentLetter"
+                            style="font-size: 17px; text-align: center; padding: 0px 10px; margin-top: 10px; font-family: 'Dancing Script', cursive; color: #333;">
+                        </p>
+
+                        <div class="heartAnimation"
+                            style="position: absolute; width: 120px; bottom: 30px; left: 50%; transform: translateX(-50%); opacity: 0.6;">
+                            <img src="./image/heartAnimation.gif" alt="" style="width: 100%;">
+                        </div>
+
+                        <button class="close-letter"
+                            style="position: relative; margin-top: 20px; padding: 10px 20px; background-color: #d6336c; color: white; border: none; border-radius: 20px; cursor: pointer; display: none; font-size: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 10;">Xem
+                            tiếp nè 💌</button>
+                    </div>
+
+                    <div class="mewmew1" style="position: absolute; width: 50px; bottom: 5px; left: 5px;">
+                        <img src="./image/mewmew.gif" alt="" style="width: 100%;">
+                    </div>
+                    <div class="mewmew2" style="position: absolute; width: 50px; bottom: 5px; right: 5px;">
+                        <img src="./image/mewmew.gif" alt="" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="before"
+                style="position: absolute; width: 650px; max-width: 90vw; height: 380px; background: #fff; transform: rotate(-10deg); border-radius: 20px; z-index: 10;">
+            </div>
         </div>
     </div>
 
@@ -52,6 +158,7 @@
     <!-- Nơi chứa các ảnh bay lơ lửng -->
     <div id="floating-images"></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="script.js"></script>
 </body>
 

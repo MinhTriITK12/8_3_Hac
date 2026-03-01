@@ -595,3 +595,122 @@ text {
     left: -50%;
     top: 0;
 }
+
+/* Responsive Styles for Mobile Phones */
+@media screen and (max-width: 768px) {
+    .greeting-text {
+        font-size: 2.2rem !important;
+        padding: 0 10px;
+    }
+
+    .avatar-container {
+        width: 120px !important;
+        height: 120px !important;
+        margin-bottom: 20px !important;
+    }
+
+    #theSvg {
+        width: 100vw !important;
+    }
+
+    /* Scaling the closed envelope down */
+    .valentines {
+        animation: upMobile 3s linear infinite !important;
+    }
+
+    @keyframes upMobile {
+
+        0%,
+        100% {
+            transform: translateY(0) scale(0.85);
+        }
+
+        50% {
+            transform: translateY(-30px) scale(0.85);
+        }
+    }
+
+    .shadow {
+        animation: scaleMobile 3s linear infinite !important;
+    }
+
+    @keyframes scaleMobile {
+
+        0%,
+        100% {
+            transform: scaleX(0.85);
+        }
+
+        50% {
+            transform: scaleX(0.7);
+        }
+    }
+
+    /* Opened letter container layout changes */
+    .formLetter,
+    .before {
+        height: auto !important;
+        min-height: 480px !important;
+        width: 90vw !important;
+        max-width: 350px !important;
+        padding: 15px 10px !important;
+    }
+
+    .wrapperLetter {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .giftbox {
+        width: 100% !important;
+        height: 160px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .giftbox .img {
+        width: 140px !important;
+        position: relative !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin-top: -10px !important;
+    }
+
+    .textLetter {
+        width: 100% !important;
+        height: auto !important;
+        justify-content: flex-start !important;
+        padding: 10px 5px !important;
+    }
+
+    .textLetter h2 {
+        font-size: 26px !important;
+        margin-bottom: 5px !important;
+        margin-top: 0 !important;
+    }
+
+    .contentLetter {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 40px !important;
+    }
+
+    .heartAnimation {
+        width: 60px !important;
+        bottom: 10px !important;
+    }
+
+    .close-letter {
+        position: relative !important;
+        padding: 8px 15px !important;
+        font-size: 14px !important;
+        margin-top: 5px !important;
+        z-index: 20 !important;
+    }
+
+    .mewmew1,
+    .mewmew2 {
+        width: 40px !important;
+    }
+}

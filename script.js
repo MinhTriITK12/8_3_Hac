@@ -55,6 +55,10 @@ let imageInterval;
 
 // Xử lý khi bấm nút mở quà
 startBtn.addEventListener('click', () => {
+    // Phát nhạc nền
+    const bgMusic = document.getElementById('bg-music');
+    if (bgMusic) bgMusic.play();
+
     introContent.style.display = 'none';
 
     document.getElementById('castle').style.display = 'flex';

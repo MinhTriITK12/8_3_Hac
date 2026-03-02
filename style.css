@@ -611,6 +611,9 @@ text {
 
     #theSvg {
         width: 125vw !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
     }
 
     /* Scaling the closed envelope down */
